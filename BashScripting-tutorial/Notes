@@ -1,0 +1,59 @@
+
+# files=$(ls -l)
+# pwd=`pwd`
+
+# if [ -z "$files" ];then
+#     echo "no files"
+# fi
+
+# if _ ;then
+#     _
+# fi
+
+# if _;then
+#     _
+# else
+#     _
+# fi
+
+# for _;do _;done
+
+# for i in {1..10};do echo $i;done
+# for i in 1 2 4 5;do echo $i;done
+
+# arr=(a b c d)
+# for i in ${arr[@]};do
+#     echo $i
+# done
+# echo ${arr[1]}/
+
+# sum(){
+#     a=$1
+#     b=$2
+#     sum=$(( a*b ))
+#     #sum=$(expr $a + $b)
+#     echo $sum
+# }
+
+# sum 10 20
+
+# ls
+# ssh root$<hostaddr> "<cmd>"
+
+
+# write a script to convert all .c files to .py
+
+touch a.c
+touch b.c
+echo "before '$(ls)'"
+
+files=$(ls *.c)
+for file in $files;do
+    filename_without_extension=$(echo $file | awk -F "." '{print $1}')
+    newfile=$filename_without_extension".py"
+    mv $file $newfile
+done
+
+echo "after: '$(ls)'"
+
+rm -rf *.c *.cpp *.py
